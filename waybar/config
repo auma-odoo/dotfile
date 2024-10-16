@@ -38,6 +38,8 @@
             "default": "󰝚"
         },
         "on-click": "playerctl play-pause",
+        "on-double-click": "playerctl next",
+        "on-triple-click": "playerctl previous",
         "escape": true,
         "max-length": 45,
         "exec": "python3 $HOME/.config/waybar/script/mediaplayer.py 2> /dev/null" // Script in resources folder

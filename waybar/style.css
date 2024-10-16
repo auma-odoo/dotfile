@@ -1,14 +1,16 @@
+@import "mocha.css";
+
 * {
   border: none;
   border-radius: 0;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 13px;
   min-height: 0;
+  color: @text;
 }
 
 window#waybar {
-  background: #363646;
-  color: #dcd7ba;
+  background: @base;
 }
 
 #window {
@@ -23,20 +25,20 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  color: #7e9cd8;
-  border-top: 2px solid #7e9cd8;
+  color: @blue;
+  border-top: 2px solid @blue;
 }
 
 #workspaces button:hover {
   transition: none;
   box-shadow: inherit;
   text-shadow: inherit;
-  color: #ff79c6;
+  color: @pink;
 }
 
 #mode {
-  color: #e46876;
-  border-top: 2px solid #e46876;
+  color: @red;
+  border-top: 2px solid @red;
 }
 
 #clock {
@@ -60,19 +62,23 @@ window#waybar {
 }
 
 #custom-clipboard {
- margin-left: 4px;
- padding-left: 3px;
+  margin-left: 4px;
+  padding-left: 3px;
 }
 
 #custom-media {
   color: #5af78e;
 }
 
-#battery.warning:not(.charging) {
-  color: white;
+#battery.critical:not(.charging) {
+  color: @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+  color: @yellow;
 }
